@@ -6,7 +6,7 @@ before_script:
   - npm i
 pages:
   script:
-    - ng build --ouput-path public --base-href /angulargitlab/
+    - ng build --output-path public --base-href /angulargitlab/
     - mv public/browser/* public/
   artifacts:
     paths:
