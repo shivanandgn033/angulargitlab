@@ -1,6 +1,6 @@
-# Angulargitlab
+# Angular gitlab pipeline deployment steps
 This project was generated using [Angular GitLab pipeline deployment steps](https://gitlab.com/shivanandn) version 19.0.6.
-
+Add .gitlab-ci.yml to root direcoty of the project
 ```yml
 # The Docker image that will be used to build your app
 image: node:lts
