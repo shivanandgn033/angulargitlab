@@ -1,7 +1,28 @@
 # Angulargitlab
+This project was generated using [Angular GitLab pipeline deployment steps](https://gitlab.com/shivanandn) version 19.0.6.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+```yml
+# The Docker image that will be used to build your app
+image: node:lts
+# Functions that should be executed before the build script is run
+before_script:
+  - npm i -g @angular/cli@19.0.7
+  - npm i
+pages:
+  script:
+    - ng build --output-path public --base-href /angulargitlab/
+    - mv public/browser/* public/
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
 
+
+```
 ## Development server
 
 To start a local development server, run:
